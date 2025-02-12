@@ -1,0 +1,64 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+/* إضافة التنسيقات العامة */
+@layer base {
+  * {
+    @apply m-0 p-0 box-border list-none no-underline;
+    scroll-padding-top: 2rem;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  html::-webkit-scrollbar {
+    width: 0.5rem;
+    background-color: #020307;
+  }
+
+  html::-webkit-scrollbar-thumb {
+    background-color: #ff2c1f;
+    border-radius: 5rem;
+  }
+
+  section {
+    @apply py-[4.5rem] px-[1.5rem];
+  }
+
+  body {
+     @apply bg-[#020307] text-white ;
+     font-family: 'Poppins', sans-serif;
+  }
+
+}
+@layer utilities {
+  .bg-home {
+    background-image: url('../img/home3.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+}
+@layer components {
+  .nav-link {
+    @apply relative text-red-500 font-medium transition-all duration-300;
+  }
+
+  .nav-link::after {
+    content: "";
+    @apply block w-0 h-[3px] bg-red-500 absolute bottom-[-4px] left-0 transition-all duration-300;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  .active-link::after {
+    @apply w-full;
+  }
+}
+
